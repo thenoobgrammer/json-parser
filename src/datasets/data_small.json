@@ -1,0 +1,331 @@
+{
+  "dataset": "small",
+  "record_count": 10,
+  "records": [
+    {
+      "id": 1,
+      "name": "Bob bolMJU",
+      "email": "evblabkh@example.com",
+      "age": 32,
+      "department": "Support",
+      "salary": 122497.2,
+      "is_active": true,
+      "hire_date": "2024-04-03T00:00:00Z",
+      "skills": [
+        "K8s",
+        "C++"
+      ],
+      "address": {
+        "street": "5575 olNftsrn St",
+        "city": "Boston",
+        "state": "OR",
+        "zip": "26361"
+      },
+      "performance_scores": [
+        4.89,
+        2.51,
+        3.21,
+        4.32
+      ],
+      "metadata": {
+        "last_login": "2024-09-25T00:00:00Z",
+        "login_count": 454,
+        "preferred_language": "fr",
+        "notifications_enabled": true
+      }
+    },
+    {
+      "id": 2,
+      "name": "Bob clpemf",
+      "email": "ohstknwh@company.org",
+      "age": 52,
+      "department": "HR",
+      "salary": 62876.35,
+      "is_active": false,
+      "hire_date": "2021-07-06T00:00:00Z",
+      "skills": [
+        "Java",
+        "Docker",
+        "Rust",
+        "Python",
+        "K8s"
+      ],
+      "address": {
+        "street": "526 PudVDLlz Dr",
+        "city": "Chicago",
+        "state": "AZ",
+        "zip": "28301"
+      },
+      "performance_scores": [
+        1.99,
+        3.25,
+        2.05,
+        3.34
+      ],
+      "metadata": {
+        "last_login": "2024-08-20T00:00:00Z",
+        "login_count": 205,
+        "preferred_language": "fr",
+        "notifications_enabled": true
+      }
+    },
+    {
+      "id": 3,
+      "name": "Charlie AecfGP",
+      "email": "vdtzbysa@gmail.com",
+      "age": 61,
+      "department": "Finance",
+      "salary": 147603.82,
+      "is_active": false,
+      "hire_date": "2020-08-16T00:00:00Z",
+      "skills": [
+        "C++",
+        "SQL",
+        "React"
+      ],
+      "address": {
+        "street": "54 XTnAjVTp Ln",
+        "city": "Portland",
+        "state": "TX",
+        "zip": "30032"
+      },
+      "performance_scores": [
+        2.5,
+        1.65,
+        4.81,
+        4.69
+      ],
+      "metadata": {
+        "last_login": "2023-01-01T00:00:00Z",
+        "login_count": 307,
+        "preferred_language": "fr",
+        "notifications_enabled": false
+      }
+    },
+    {
+      "id": 4,
+      "name": "Alice fsZPmm",
+      "email": "demqybgi@company.org",
+      "age": 34,
+      "department": "Legal",
+      "salary": 175010.81,
+      "is_active": true,
+      "hire_date": "2023-12-31T00:00:00Z",
+      "skills": [
+        "C++",
+        "Docker",
+        "Rust"
+      ],
+      "address": {
+        "street": "7178 UxmdbCEa St",
+        "city": "Houston",
+        "state": "CA",
+        "zip": "14117"
+      },
+      "performance_scores": [
+        4.44,
+        1.28,
+        1.95,
+        3.68
+      ],
+      "metadata": {
+        "last_login": "2023-08-08T00:00:00Z",
+        "login_count": 277,
+        "preferred_language": "es",
+        "notifications_enabled": false
+      }
+    },
+    {
+      "id": 5,
+      "name": "Diana OPjfww",
+      "email": "yljzfurs@company.org",
+      "age": 30,
+      "department": "HR",
+      "salary": 115080.01,
+      "is_active": true,
+      "hire_date": "2022-05-14T00:00:00Z",
+      "skills": [
+        "Go",
+        "React"
+      ],
+      "address": {
+        "street": "4093 TdQSfHCa St",
+        "city": "Houston",
+        "state": "IL",
+        "zip": "63269"
+      },
+      "performance_scores": [
+        2.94,
+        1.85,
+        2.6,
+        1.23
+      ],
+      "metadata": {
+        "last_login": "2024-01-24T00:00:00Z",
+        "login_count": 2,
+        "preferred_language": "de",
+        "notifications_enabled": false
+      }
+    },
+    {
+      "id": 6,
+      "name": "Hank oKLOIz",
+      "email": "jldmdqcy@company.org",
+      "age": 21,
+      "department": "Marketing",
+      "salary": 159187.96,
+      "is_active": true,
+      "hire_date": "2023-05-03T00:00:00Z",
+      "skills": [
+        "Docker"
+      ],
+      "address": {
+        "street": "3854 uWDEceID Blvd",
+        "city": "Phoenix",
+        "state": "TX",
+        "zip": "97782"
+      },
+      "performance_scores": [
+        3.86,
+        1.95,
+        2.58,
+        3.69
+      ],
+      "metadata": {
+        "last_login": "2023-11-04T00:00:00Z",
+        "login_count": 235,
+        "preferred_language": "fr",
+        "notifications_enabled": true
+      }
+    },
+    {
+      "id": 7,
+      "name": "Alice xZZdln",
+      "email": "wtttirkf@gmail.com",
+      "age": 60,
+      "department": "Finance",
+      "salary": 170445.85,
+      "is_active": true,
+      "hire_date": "2024-12-03T00:00:00Z",
+      "skills": [
+        "Go",
+        "JavaScript"
+      ],
+      "address": {
+        "street": "1754 MiokrJSA Blvd",
+        "city": "New York",
+        "state": "CA",
+        "zip": "93136"
+      },
+      "performance_scores": [
+        2.69,
+        2.11,
+        1.01,
+        4.08
+      ],
+      "metadata": {
+        "last_login": "2024-10-14T00:00:00Z",
+        "login_count": 135,
+        "preferred_language": "es",
+        "notifications_enabled": false
+      }
+    },
+    {
+      "id": 8,
+      "name": "Ivy KDfXJh",
+      "email": "btcwcswy@gmail.com",
+      "age": 75,
+      "department": "Operations",
+      "salary": 69410.72,
+      "is_active": true,
+      "hire_date": "2023-09-27T00:00:00Z",
+      "skills": [
+        "Rust"
+      ],
+      "address": {
+        "street": "9174 TvGiWSYQ Dr",
+        "city": "New York",
+        "state": "IL",
+        "zip": "53540"
+      },
+      "performance_scores": [
+        4.13,
+        2.65,
+        3.68,
+        3.94
+      ],
+      "metadata": {
+        "last_login": "2023-09-12T00:00:00Z",
+        "login_count": 137,
+        "preferred_language": "es",
+        "notifications_enabled": true
+      }
+    },
+    {
+      "id": 9,
+      "name": "Grace TSlQxp",
+      "email": "plbkrsyo@example.com",
+      "age": 61,
+      "department": "Operations",
+      "salary": 171493.2,
+      "is_active": true,
+      "hire_date": "2024-12-01T00:00:00Z",
+      "skills": [
+        "SQL",
+        "AWS",
+        "Go"
+      ],
+      "address": {
+        "street": "627 fwLqFAuD Blvd",
+        "city": "New York",
+        "state": "CO",
+        "zip": "10221"
+      },
+      "performance_scores": [
+        3.08,
+        4.23,
+        3.75,
+        4.76
+      ],
+      "metadata": {
+        "last_login": "2024-11-17T00:00:00Z",
+        "login_count": 101,
+        "preferred_language": "fr",
+        "notifications_enabled": false
+      }
+    },
+    {
+      "id": 10,
+      "name": "Bob XVGIgU",
+      "email": "aiqkcjit@company.org",
+      "age": 57,
+      "department": "Finance",
+      "salary": 96850.52,
+      "is_active": true,
+      "hire_date": "2021-09-14T00:00:00Z",
+      "skills": [
+        "Java",
+        "C++",
+        "AWS"
+      ],
+      "address": {
+        "street": "9940 IywlyUPi St",
+        "city": "Phoenix",
+        "state": "OR",
+        "zip": "97012"
+      },
+      "performance_scores": [
+        3.53,
+        2.34,
+        4.27,
+        4.0
+      ],
+      "metadata": {
+        "last_login": "2024-11-19T00:00:00Z",
+        "login_count": 159,
+        "preferred_language": "es",
+        "notifications_enabled": true
+      }
+    }
+  ]
+}
