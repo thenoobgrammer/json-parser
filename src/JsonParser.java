@@ -1,5 +1,6 @@
 import java.text.ParseException;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.Stack;
 import java.util.regex.Pattern;
 
@@ -44,7 +45,7 @@ public class JsonParser {
         if (value.charAt(0) == '{') {
             parseCollection(value);
         } else if (value.charAt(0) == '[') {
-            parseArray(value);
+            parseArray(Optional.of(key), value);
         } else if (value.charAt(0) == '"') {
             map.put(key.substring(1, key.length()-1), value.substring(1, value.length()-1));
         } else if (Pattern.matches("[0-9]", value)) {
@@ -56,7 +57,7 @@ public class JsonParser {
         }
     }
 
-    private Object[] parseArray(String v) throws Exception {
+    private Object[] parseArray(Optional<String> key, String v) throws Exception {
         Object[] arr = new Object[]{};
         if (v.charAt(0) != '[' || v.charAt(v.length()-1) != ']') {
             throw new Exception("Invalid array format");
@@ -65,27 +66,29 @@ public class JsonParser {
         StringBuilder sb = new StringBuilder(v);
         sb.deleteCharAt(0);
         sb.deleteCharAt(sb.length()-1);
-        /**
-         * ["a",1,true,["aa","bb"],{"a":"b"}]
-         * "a",1,true,["aa","bb"],{"a":"b"}
-         * i
-         *    k
-         */
-        boolean arrayOrObjectFound = false;
 
         for (int i = 0; i < sb.length(); i++) {
             // We need to handle mixed primitives e.g ["A", 2, true]
+            Stack<Integer> stack = new Stack<>();
+
             if (sb.charAt(i) == '[' || sb.charAt(i) == '{') {
-                arrayOrObjectFound = true;
-                for ()
-            } else if (sb.charAt(i) == '"') {
+                stack.push(i);
                 int k = i;
-                while (sb.charAt(k) != ',' && k < sb.length()) {
+                while (!stack.isEmpty()) {
+                    if (sb.charAt(k) == '[' || sb.charAt(k) == '{') {
+                        stack.push(k);
+                    } else  if (sb.charAt(k) == ']' || sb.charAt(k) == '}') {
+                        stack.pop();
+                    }
                     k++;
                 }
-                sb.substring(i+1, k-2);
-                i = k+1;
-            } else if(Pattern.matches("true|false", sb)) {}
+                i = k;
+                if (sb.charAt(i) == '[') {
+                    parseArray(key, sb.substring(i, k));
+                } else {
+                    parseCollection(sb.substring(i, k));
+                }
+            }
         }
     }
 
