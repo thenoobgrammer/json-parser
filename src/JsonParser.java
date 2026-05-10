@@ -1,4 +1,5 @@
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 import java.util.Stack;
@@ -17,7 +18,7 @@ public class JsonParser {
 
     public void Parse(String json) throws Exception {
         if (json.charAt(0) == '[') {
-            parseArray(json);
+            parseArray(null, json);
         } else if (json.charAt(0) == '{') {
             parseCollection(json);
         }
@@ -57,8 +58,8 @@ public class JsonParser {
         }
     }
 
-    private Object[] parseArray(Optional<String> key, String v) throws Exception {
-        Object[] arr = new Object[]{};
+    private ArrayList<Object> parseArray(Optional<String> key, String v) throws Exception {
+        ArrayList<Object> arr = new ArrayList<>();
         if (v.charAt(0) != '[' || v.charAt(v.length()-1) != ']') {
             throw new Exception("Invalid array format");
         }
@@ -70,6 +71,16 @@ public class JsonParser {
         for (int i = 0; i < sb.length(); i++) {
             // We need to handle mixed primitives e.g ["A", 2, true]
             Stack<Integer> stack = new Stack<>();
+            /**
+             * s = ["a",1,true,["a","b"]]
+             * s = "a",1,true,["a",["a"],{"a":"b"}],1,false,null
+             *     i
+             *       k
+             *                                     k
+             * stack = []
+             */
+            if (sb.charAt(i) == ',')
+                continue;
 
             if (sb.charAt(i) == '[' || sb.charAt(i) == '{') {
                 stack.push(i);
@@ -82,14 +93,35 @@ public class JsonParser {
                     }
                     k++;
                 }
-                i = k;
+                i = k-1;
                 if (sb.charAt(i) == '[') {
-                    parseArray(key, sb.substring(i, k));
+                    parseArray(key, sb.substring(i, k-1));
                 } else {
-                    parseCollection(sb.substring(i, k));
+                    parseCollection(sb.substring(i, k-1));
                 }
+                stack.clear();
+            } else if (sb.charAt(i) == '"') {
+                int k = i;
+                while (sb.charAt(k) != '"') {
+                    k++;
+                }
+                arr.add(sb.substring(i, k));
+                i = k-1;
+            }  else {
+                int k = i;
+                while (k < sb.length() && sb.charAt(k) != ',') {
+                    k++;
+                }
+                String s = sb.substring(i, k);
+                if (s == "true" || s == "false") {
+                    arr.add(s == "true");
+                } else if (s == "null" || s == "undefined") {
+                    arr.add(null);
+                }
+                i = k+1;
             }
         }
+        return arr;
     }
 
     private void parseCollection(String v) throws Exception {

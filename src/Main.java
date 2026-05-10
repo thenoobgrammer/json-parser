@@ -22,7 +22,7 @@ public class Main {
                 }
             }
             parser.Parse(sb.toString());
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
